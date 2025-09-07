@@ -7,10 +7,10 @@ document.addEventListener('mousemove', (e) => {
   const { innerWidth, innerHeight } = window;
   const x = (e.clientX / innerWidth - 0.5) * 2;
   const y = (e.clientY / innerHeight - 0.5) * 2;
-  curX = curX * 0.85 + x * 0.15;
-  curY = curY * 0.85 + y * 0.15;
-  const rotX = -curY * 35;
-  const rotY = curX * 35;
+  curX = curX * 0.7 + x * 0.3;
+  curY = curY * 0.7 + y * 0.3;
+  const rotX = -curY * 60;
+  const rotY = curX * 60;
   cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
 });
 
