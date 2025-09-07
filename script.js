@@ -58,3 +58,26 @@ window.addEventListener('DOMContentLoaded', () => {
   tabIndicator.style.width = '50%';
   switchTab('experience');
 });
+
+(function () {
+  const prompt = document.getElementById('scroll-prompt');
+  if (!prompt) return;
+
+  // Where to scroll to (first try the section, else the whole .content wrapper)
+  const target = document.querySelector('#tabs-section') || document.querySelector('.content');
+
+  prompt.addEventListener('click', () => {
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  // Hide after the user has scrolled a bit; show when back at the top
+  const toggle = () => {
+    if (window.scrollY > window.innerHeight * 0.25) {
+      prompt.classList.add('is-hidden');
+    } else {
+      prompt.classList.remove('is-hidden');
+    }
+  };
+  toggle();
+  window.addEventListener('scroll', toggle, { passive: true });
+})();

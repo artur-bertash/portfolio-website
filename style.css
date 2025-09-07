@@ -329,6 +329,10 @@ header {
   .cube-bio, .cube-info, .cube-contact, .cube-title, .cube-experience {
     padding: 15px;
   }
+
+  .cube-bio {
+    max-width: 40%;
+  }
   
   .cube-bio h2, .cube-info h2, .cube-contact h2, .cube-experience h2 {
     font-size: 1.2em;
@@ -486,7 +490,7 @@ header {
   color: var(--accent-timeline);
 }
 
-.cube-info, .cube-contact, .cube-title, .cube-experience {
+.cube-info, .cube-location, .cube-title, .cube-experience {
   color: #212529;
   text-align: center;
   padding: 20px;
@@ -545,4 +549,30 @@ header {
   color: var(--accent-timeline);
   font-weight: 600;
   margin: 0;
+}
+
+/* Scroll prompt */
+.scroll-prompt{
+  position:fixed; left:50%; bottom:clamp(16px,4vh,40px);
+  transform:translateX(-50%);
+  width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+  color:#666; opacity:.9; z-index:1000; cursor:pointer;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+  transition:opacity .25s ease, transform .25s ease;
+}
+.scroll-prompt:hover{ opacity:1; transform:translateX(-50%) translateY(2px); }
+
+@keyframes bounce {
+  0%,20%,50%,80%,100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+.scroll-prompt .chev{ animation:bounce 1.5s infinite; }
+
+/* Hide state once user scrolls */
+.scroll-prompt.is-hidden{ opacity:0; pointer-events:none; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .scroll-prompt .chev{ animation:none; }
 }
