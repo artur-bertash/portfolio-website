@@ -1,15 +1,12 @@
 const cube = document.getElementById('cube');
 const cubeBg = document.querySelector('.cube-bg');
-const tabs = document.getElementById('tabs');
-const timelineSection = document.getElementById('timeline-section');
 
-// Track mouse and tilt cube
+// Tilt cube on mouse move
 let curX = 0, curY = 0;
 document.addEventListener('mousemove', (e) => {
   const { innerWidth, innerHeight } = window;
   const x = (e.clientX / innerWidth - 0.5) * 2;
   const y = (e.clientY / innerHeight - 0.5) * 2;
-  // Smooth transition
   curX = curX * 0.85 + x * 0.15;
   curY = curY * 0.85 + y * 0.15;
   const rotX = -curY * 35;
@@ -17,23 +14,47 @@ document.addEventListener('mousemove', (e) => {
   cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
 });
 
-// Blur the cube as you scroll, reveal timeline and tabs
-const revealTimeline = window.innerHeight * 0.30;
-const revealTabs = window.innerHeight * 0.80;
+// Blur cube and reveal tab section on scroll
+const tabsSection = document.getElementById('tabs-section');
 window.addEventListener('scroll', () => {
   const s = window.scrollY;
-  // Blur increases from 0px to 32px
   const blur = Math.min(32, s / 3);
   cubeBg.style.filter = `blur(${blur}px)`;
-  // Tabs fade in after scrolling enough
-  if (s > revealTabs) {
-    tabs.classList.add('visible');
-  } else {
-    tabs.classList.remove('visible');
-  }
+  // Optionally, could add fade-in for tabs-section if desired
 });
 
-// On load, reset cube (in case first mousemove hasn't fired)
+// On load, reset cube
 window.addEventListener('DOMContentLoaded', () => {
   cube.style.transform = `rotateX(-20deg) rotateY(20deg)`;
+});
+
+// Tab switching logic
+const tabSwitcher = document.getElementById('tab-switcher');
+const tabBtns = tabSwitcher.querySelectorAll('.tab-btn');
+const tabIndicator = tabSwitcher.querySelector('.tab-indicator');
+const tabContents = {
+  experience: document.getElementById('tab-experience'),
+  projects: document.getElementById('tab-projects'),
+};
+function switchTab(name) {
+  tabBtns.forEach((btn, idx) => {
+    const isActive = btn.dataset.tab === name;
+    btn.classList.toggle('active', isActive);
+    if(isActive) {
+      tabIndicator.style.left = `${idx * 50}%`;
+    }
+  });
+  Object.entries(tabContents).forEach(([tab, el]) => {
+    el.classList.toggle('visible', tab === name);
+  });
+}
+tabSwitcher.addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if(!btn) return;
+  switchTab(btn.dataset.tab);
+});
+// Set indicator width on load
+window.addEventListener('DOMContentLoaded', () => {
+  tabIndicator.style.width = '50%';
+  switchTab('experience');
 });
