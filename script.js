@@ -3,17 +3,25 @@ const cubeBg = document.querySelector('.cube-bg');
 
 // Tilt cube on mouse move
 let curX = 0, curY = 0;
+let tarX = -20, tarY = 20; // target </angles>
 document.addEventListener('mousemove', (e) => {
   const { innerWidth, innerHeight } = window;
-  const x = (e.clientX / innerWidth - 0.5) * 2;
-  const y = (e.clientY / innerHeight - 0.5) * 2;
-  curX = curX * 0.7 + x * 0.3;
-  curY = curY * 0.7 + y * 0.3;
-  const rotX = -curY * 60;
-  const rotY = curX * 60;
-  cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  const offSetX = (e.clientX / innerWidth - 0.5) * 2;
+  const offSetY = (e.clientY / innerHeight - 0.5) * 2;
+
+  tarX = -offSetY * 90;
+  tarY = offSetX * 90;
+
 });
 
+function tick() {
+  curX += (tarX - curX) * 0.05;
+  curY += (tarY - curY) * 0.05;
+  
+  cube.style.transform = `rotateX(${curX}deg) rotateY(${curY}deg)`;
+  requestAnimationFrame(tick);
+}
+tick()
 // Blur cube and reveal tab section on scroll
 const tabsSection = document.getElementById('tabs-section');
 window.addEventListener('scroll', () => {
@@ -24,9 +32,6 @@ window.addEventListener('scroll', () => {
 });
 
 // On load, reset cube
-window.addEventListener('DOMContentLoaded', () => {
-  cube.style.transform = `rotateX(-20deg) rotateY(20deg)`;
-});
 
 // Tab switching logic
 const tabSwitcher = document.getElementById('tab-switcher');
