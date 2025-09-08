@@ -589,6 +589,9 @@ header {
 
 }
 
+body {
+  background: radial-gradient(circle at center, #b9b6b6, #ffffff);
+}
 
 
 .experience-card {
