@@ -604,8 +604,12 @@ header {
   grid-row: 1;
 }
 
-#monke { grid-column: 3; grid-row: 2; } 
+#monke { grid-column: 1; grid-row: 3; } 
 
+#tutor {
+  grid-column: 3;
+  grid-row: 2;
+}
 .experience::before {
   content: "";
   grid-column: 2;
