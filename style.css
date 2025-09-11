@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+*, *::before, *::after {
+  font-family: inherit;
+}
+
 .cube-bg {
   position: fixed;
   top: 50%;
@@ -353,7 +357,8 @@ header {
 }
 
 /* PROJECTS TAB */
-.projects-title {
+.projects-title,
+.awards-title {
   font-size: 1.3em;
   font-weight: bold;
   color: #495057;
@@ -362,13 +367,15 @@ header {
   margin-top: 0;
   letter-spacing: 0.02em;
 }
-.projects-list {
+.projects-list,
+.awards-list {
   display: flex;
   flex-wrap: wrap;
   gap: 2.5em 3em;
   justify-content: center;
 }
-.project-card {
+.project-card, 
+.award-card{
   background: #ffffff;
   border-radius: 18px;
   box-shadow: 0 6px 32px 0 #6c757d44;
@@ -385,27 +392,33 @@ header {
   transition: box-shadow 0.3s, transform 0.3s;
   position: relative;
 }
-.project-card:hover {
+.project-card:hover,
+.award-card:hover {
   box-shadow: 0 16px 54px 0 #6c757dcc;
   transform: translateY(-2px) scale(1.03);
 }
-.project-title {
+.project-title,
+.award-title
+ {
   font-size: 1.18em;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: .3em;
 }
-.project-meta {
+.project-meta,
+.award-meta {
   font-size: .98em;
   color: #6c757d;
   margin-bottom: .4em;
 }
-.project-desc {
+.project-desc,
+.award-desc {
   font-size: 1em;
   color: #495057;
   margin-bottom: 1.1em;
 }
-.project-link {
+.project-link,
+.award-link  {
   color: var(--accent-timeline);
   font-weight: 500;
   text-decoration: underline;
@@ -595,6 +608,9 @@ body {
 
 
 .experience-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   margin: 1rem;
   padding: 1rem;
   border: #6c757d33 1px solid;
@@ -619,4 +635,50 @@ body {
   grid-row: 1 / span 5;
   background: linear-gradient(to bottom, var(--accent-timeline), transparent 98%);
   border-radius: 2px;
+}
+
+.logo {
+  display: inline;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  
+  
+}
+
+.award-title, 
+.experience-name {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 8px 0;
+}
+
+.experience-name {
+  font-size: 1.3rem;
+  
+}
+
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  border-color: #cfd5db;
+}
+
+.experience-card {
+  --card-bg: rgba(255,255,255,0.92);
+  --card-br: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px;
+  padding: 16px 18px 18px 18px;
+  background: var(--card-bg);
+  border-radius: var(--card-br);
+  border: 1px solid #d7dce1;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  backdrop-filter: saturate(1.1) blur(2px);
 }
