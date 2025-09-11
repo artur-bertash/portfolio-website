@@ -66,6 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 (function () {
   const prompt = document.getElementById('scroll-prompt');
+  const socials = document.querySelector(".socials");
   if (!prompt) return;
 
   // Where to scroll to (first try the section, else the whole .content wrapper)
@@ -79,10 +80,15 @@ window.addEventListener('DOMContentLoaded', () => {
   const toggle = () => {
     if (window.scrollY > window.innerHeight * 0.25) {
       prompt.classList.add('is-hidden');
+      socials.classList.add("is-hidden")
+
     } else {
       prompt.classList.remove('is-hidden');
+      socials.classList.remove('is-hidden');
     }
   };
   toggle();
+
+  
   window.addEventListener('scroll', toggle, { passive: true });
 })();

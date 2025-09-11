@@ -585,7 +585,11 @@ header {
 
 /* Hide state once user scrolls */
 .scroll-prompt.is-hidden{ opacity:0; pointer-events:none; }
+.socials.is-hidden {opacity: 0; pointer-events: none;}
 
+.socials {
+  transition: 0.25s ease;
+}
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   .scroll-prompt .chev{ animation:none; }
@@ -682,3 +686,19 @@ body {
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
   backdrop-filter: saturate(1.1) blur(2px);
 }
+
+
+.socials {
+ position: fixed;
+ left: 50%;
+ transform: translateX(-50%);
+ z-index: 1001;
+ top: clamp(16px,4vh,40px);
+  
+}
+
+a svg {
+  color: rgb(128, 128, 128, 0.8);
+}
+
+
