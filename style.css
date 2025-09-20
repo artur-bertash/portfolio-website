@@ -23,6 +23,15 @@ body {
   font-family: inherit;
 }
 
+body {
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 .cube-bg {
   position: fixed;
   top: 50%;
