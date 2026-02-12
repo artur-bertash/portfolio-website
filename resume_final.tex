@@ -1,0 +1,226 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Artur Bertash} \\ \vspace{1pt}
+    \small 1 (587) 594-5891 $|$ \href{mailto:arturbertash88@gmail.com}{\underline{arturbertash88@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/artur-bertash/}{\underline{linkedin.com/in/artur-bertash}} $|$
+    \href{https://github.com/artur-bertash}{\underline{github.com/artur-bertash}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Alberta}{GPA 3.6/4.0}
+      {B.Sc. (Honours) Computer Science (AI Specialization), Minor in Mathematics}{Sep 2024 -- May 2028}
+
+
+
+
+
+
+
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Developer}{Dec 2025 -- Present}
+      {\href{https://arvp.org/}{ARVP -- Autonomous Robotic Vehicle Project (University of Alberta)}}{Edmonton, AB}
+      \resumeItemListStart
+        \resumeItem{Migrated a real-time 6-DoF ROS 2 PID control node from Python (rclpy + NumPy) to C++ (rclcpp + Eigen), reducing per-update computation time from 320µs to 1µs in isolated benchmarks}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Teaching Assistant (CMPUT 274/275) (Honours)}{Sep 2025 -- Present}
+      {University of Alberta}{Edmonton, AB}
+      \resumeItemListStart
+        \resumeItem{Held weekly office hours, guiding students through a major curriculum transition and clarifying newly introduced functional programming concepts in Python, Bash, and C}
+        \resumeItem{Authored test cases for all assignments, bash scripts for automatic grading, and worked with other TAs to develop marking schemes for midterms and the final for 200+ students}
+      \resumeItemListEnd
+
+
+    \resumeSubheading
+      {Lead Developer}{May 2024 -- Aug 2024}
+      {Monke}{Remote}
+      \resumeItemListStart
+        \resumeItem{Designed and built a Telegram-based multiplayer game with async Python backend (aiogram) connected to a MySQL database, scaling to over 10,000 users during MVP launch}
+        \resumeItem{Implemented core gameplay systems, including an in-game reward calculation and distribution logic designed to encourage repeat user engagement}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{RISC-V to WebAssembly Instruction Translator} $|$ \emph{RISC-V (assembly)}}{Nov. 2025}
+          \resumeItemListStart
+            \resumeItem{Built a tool that converts RISC-V machine instructions into equivalent WebAssembly operations}
+            \resumeItem{Handled arithmetic, logic, and control-flow instructions, including conditional and unconditional branches}
+            \resumeItem{Implemented logic to correctly resolve jump targets for both forward and backward program flow}
+            
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/artur-bertash/Oubl}{Oubl}} $|$ \emph{React, Node.js (Express), Docker, VPS}}{Sep 2025 -- Nov 2025}
+
+          \resumeItemListStart
+            \resumeItem{Built and deployed a full-stack React web app and Chrome extension with a Node.js (Express) backend to automate Anki
+card creation from video content}
+            \resumeItem{Deployed and managed VPS servers for subtitle extraction, media processing, and translation using FFmpeg,
+yt-dlp, and Dockerized LibreTranslate}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+%-----------ACHIEVEMENTS-----------
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\begin{itemize}[leftmargin=0.15in]
+  \item \textbf{2nd Place – NAT Ignite 2025} — Secured \$3K seed funding; 
+Co-founded Parmi (physiotherapy adherence app), handled frontend development and image generation, team of 3
+(\href{https://devpost.com/software/parmi-des27q}{Devpost})
+
+
+  \item \textbf{4th Place – WhiteBIT Crypto Ad Competition} — Awarded 0.05 BTC; Created educational video explaining Bitcoin halving  for a crypto exchange, team of 3
+\end{itemize}
+
+
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, Python, C, SQL (PostgreSQL), JavaScript, Bash, HTML/CSS} \\
+     \textbf{Frameworks \& Middleware}{: ROS2 (rclcpp, rclpy), React, Node.js (Express)} \\
+     \textbf{Libraries}{: Eigen (C++ linear algebra), NumPy} \\
+     \textbf{Systems \& Tools}{: Linux, Git, Docker, CMake, REST APIs}
+    }}
+ \end{itemize}
+
+
+
+%-------------------------------------------
+\end{document}

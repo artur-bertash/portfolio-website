@@ -639,16 +639,24 @@ body {
   background-color: rgba(255, 255, 255, 0.776);
 }
 
-#TA {
+#arvp-exp {
   grid-column: 1;
   grid-row: 1;
 }
 
-#monke { grid-column: 1; grid-row: 3; } 
-
-#tutor {
+#TA {
   grid-column: 3;
   grid-row: 2;
+}
+
+#tutor {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+#monke {
+  grid-column: 3;
+  grid-row: 4;
 }
 .experience::before {
   content: "";
@@ -659,12 +667,11 @@ body {
 }
 
 .logo {
-  display: inline;
+  display: inline-block;
   width: 32px;
   height: 32px;
-  border-radius: 8px;
-  
-  
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .award-title, 
