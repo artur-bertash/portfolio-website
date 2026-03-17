@@ -22,6 +22,7 @@ body {
   width: 100%;
   overflow: hidden;
   background: radial-gradient(circle at 50% 50%, #c8c4c4, #ffffff);
+  background-attachment: fixed;
   color: var(--text-main);
 }
 
@@ -51,7 +52,7 @@ body {
   display: grid;
   grid-template-columns: var(--panel-width) 1fr var(--panel-width);
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   padding-top: 70px;
   /* space for socials */
@@ -223,6 +224,7 @@ body {
   width: var(--cube-size);
   height: var(--cube-size);
   perspective: 900px;
+  flex-shrink: 0;
 }
 
 .cube {
@@ -337,6 +339,7 @@ body {
   html,
   body {
     overflow: auto;
+    height: auto;
   }
 
   .page-layout {

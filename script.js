@@ -13,6 +13,16 @@ document.addEventListener('mousemove', (e) => {
   tarY = offSetX * 35 + 10;
 });
 
+// Spin the cube when scrolling on mobile
+window.addEventListener('scroll', () => {
+  if (window.innerWidth <= 800) {
+    // Scroll distance affects the Y rotation (spinning horizontally)
+    tarY = 20 + window.scrollY * 0.2;
+    // Optionally add a slight X tilt depending on scroll
+    tarX = -20 - window.scrollY * 0.025;
+  }
+});
+
 function tick() {
   curX += (tarX - curX) * 0.05;
   curY += (tarY - curY) * 0.05;
