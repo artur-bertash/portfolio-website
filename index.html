@@ -45,9 +45,19 @@
     <aside class="panel panel-left" id="panel-left">
       <h2 class="panel-title">Experience</h2>
 
+      <div class="experience-card" id="cibc-exp">
+        <div class="experience-name">CIBC <img src="imgs/cibc.png" alt="CIBC logo" class="logo"></div>
+        <div class="experience-role">Software Engineering Intern (DevOps)</div>
+        <div class="experience-desc">
+          <ul>
+            <li>Researching and designing multi-version Go support for a shared CI runner on OpenShift (Kubernetes).</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="experience-card" id="arvp-exp">
         <div class="experience-name">ARVP <img src="imgs/arvp.png" alt="ARVP logo" class="logo"></div>
-        <div class="experience-role">Software Developer</div>
+        <div class="experience-role">Software Developer (Robotics)</div>
         <div class="experience-dates">Dec 2025 — Present</div>
         <div class="experience-desc">
           <ul>
@@ -59,32 +69,6 @@
           style="margin-left: 0.1em; margin-bottom: 0.2em;">Performance analysis demo [GitHub]</a>
       </div>
 
-      <div class="experience-card" id="TA">
-        <div class="experience-name">University of Alberta <img src="imgs/uofa.png" alt="UofA logo" class="logo"></div>
-        <div class="experience-role">Teaching Assistant — CMPUT 274/275 (Honors)</div>
-        <div class="experience-dates">Sep 2025 — Present</div>
-        <div class="experience-desc">
-          <ul>
-            <li>Ran weekly office hours for a class of 200+ students, supporting them in Python, C, and C++.</li>
-            <li>Graded assignments, practice problems and midterms.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="experience-card" id="tutor">
-        <div class="experience-name">Tutorax &amp; Preply <img src="imgs/tutorax.png" alt="Tutorax Logo"
-            class="logo"><img src="imgs/preply.png" class="logo" alt="Preply Logo"></div>
-        <div class="experience-role">SAT/Math/English Tutor</div>
-        <div class="experience-dates">May 2025 — Aug 2025</div>
-        <div class="experience-desc">
-          <ul>
-            <li>Raised SAT Math scores by avg. 140 points.</li>
-            <li>Earned 4.8/5 rating and "Super Tutor" badge.</li>
-            <li>Coached SAT, IELTS &amp; other exams with tailored strategies.</li>
-          </ul>
-        </div>
-      </div>
-
       <div class="experience-card" id="monke">
         <div class="experience-name">Monke <img src="imgs/monke.png" alt="Monke Logo" class="logo"></div>
         <div class="experience-role">Co-Founder &amp; Developer</div>
@@ -92,9 +76,21 @@
         <div class="experience-desc">
           <ul>
             <li>Built a Telegram Mini App game on TON blockchain (~10K users).</li>
-            <li>Implemented core gameplay logic
-              to
-              encourage repeat user engagemen</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="panel-title awards-section-title">Other Experience</h3>
+
+      <div class="experience-card" id="teaching-exp">
+        <div class="experience-name">Teaching &amp; Tutoring <img src="imgs/uofa.png" alt="University of Alberta logo"
+            class="logo"><img src="imgs/tutorax.png" alt="Tutorax logo" class="logo"><img src="imgs/preply.png"
+            alt="Preply logo" class="logo"></div>
+        <div class="experience-role">CMPUT 274/275 TA (Sep 2025 — Present) · SAT/Math Tutor (May — Aug 2025)</div>
+        <div class="experience-desc">
+          <ul>
+            <li>Supported 200+ students in Python, C, and C++.</li>
+            <li>Raised SAT Math scores by 140 points on average; earned a 4.8/5 tutor rating.</li>
           </ul>
         </div>
       </div>
@@ -109,7 +105,7 @@
           </div>
           <div class="face right">
             <div class="cube-location">
-              <h2>📍 Based in Edmonton, AB</h2>
+              <h2>📍 Based in Toronto, Ontario</h2>
             </div>
           </div>
           <div class="face left">
@@ -121,7 +117,7 @@
           <div class="face top">
             <div class="cube-title">
               <h1>Artur Bertash</h1>
-              <p>C++ • Computer Architecture • Robotics</p>
+              <p>Cloud Computing • DevOps • CI/CD</p>
             </div>
           </div>
           <div class="face bottom">
@@ -135,7 +131,35 @@
 
     <!-- RIGHT PANEL: Projects & Awards -->
     <aside class="panel panel-right" id="panel-right">
-      <h2 class="panel-title">Projects</h2>
+      <h2 class="panel-title">Awards</h2>
+
+      <div class="award-card">
+        <div class="award-title"><img src="imgs/nat.png" alt="NatIgnite Logo" class="logo" /> NatIgnite — Parmi</div>
+        <div class="award-meta">2025</div>
+        <div class="award-desc">2nd place at NAT Ignite 2025 with Parmi, earning $3K in seed funding.</div>
+        <a href="https://devpost.com/software/parmi-des27q" class="project-link">View Devpost</a>
+      </div>
+
+      <h2 class="panel-title awards-section-title">Projects</h2>
+
+      <div class="project-card">
+        <div class="project-title"><img src="imgs/risc-v.png" alt="RISC-V Logo" class="logo">RISC-V → WebAssembly
+          Translator</div>
+        <div class="project-meta">Nov 2025 - Feb 2026</div>
+        <div class="project-desc">Binary-level instruction translator that decodes RISC-V machine code and emits
+          WebAssembly instructions.</div>
+        <a href="https://github.com/artur-bertash/risc-v_to_wasm" class="project-link">GitHub Repo</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-title"><img src="imgs/cpp.svg" alt="C++ logo" class="logo">C++ WebAssembly Signal Visualizer</div>
+        <div class="project-meta">C++, Emscripten, WebAssembly, React · May 2026</div>
+        <div class="project-desc">
+          <ul>
+            <li>Implemented a C++ Kalman filter compiled to WebAssembly and visualized 2,000-sample signals in React.</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="project-card">
         <div class="project-title"><img src="imgs/oubl.png" alt="Oubl Logo" class="logo">Oubl</div>
@@ -144,23 +168,7 @@
         <a href="https://github.com/artur-bertash/Oubl" class="project-link">GitHub Repo</a>
       </div>
 
-      <div class="project-card">
-        <div class="project-title"><img src="imgs/risc-v.png" alt="RISC-V Logo" class="logo">RISC-V → WebAssembly
-          Translator</div>
-        <div class="project-meta">Nov 2025 - Feb 2026</div>
-        <div class="project-desc">Binary-level instruction translator that decodes RISC-V machine code and emits
-          equivalent WebAssembly instructions.</div>
-        <a href="https://github.com/artur-bertash/risc-v_to_wasm" class="project-link">GitHub Repo</a>
-      </div>
-
-      <h2 class="panel-title awards-section-title">Awards</h2>
-
-      <div class="award-card">
-        <div class="award-title"><img src="imgs/nat.png" alt="NatIgnite Logo" class="logo" /> NatIgnite — Parmi</div>
-        <div class="award-meta">2025</div>
-        <div class="award-desc">2nd place at NAT Ignite 2025 with Parmi, earning $3K in seed funding.</div>
-        <a href="https://devpost.com/software/parmi-des27q" class="project-link">View Devpost</a>
-      </div>
+      <h3 class="panel-title awards-section-title">Other Awards</h3>
 
       <div class="award-card">
         <div class="award-title"><img src="imgs/wbt.png" alt="WhiteBit Logo" class="logo"> WhiteBit — Moonwrld</div>
